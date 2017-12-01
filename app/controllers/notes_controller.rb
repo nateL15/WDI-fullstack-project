@@ -38,8 +38,6 @@ class NotesController < OpenReadController
     @note.destroy
   end
 
-  private
-
     # Use callbacks to share common setup or constraints between actions.
     def set_note
       @note = current_user.note.find(params[:id])
@@ -47,6 +45,8 @@ class NotesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def note_params
-      params.require(:note).permit(:text)
+      params.require(:note).permit(:champion, :note)
     end
+
+    private :set_note, :note_params
 end
