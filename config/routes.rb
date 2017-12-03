@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   delete '/sign-out/:id' => 'users#signout'
   patch '/change-password/:id' => 'users#changepw'
   resources :users, only: %i[index show]
-  resources :notes
 
   get '/notes' => 'notes#index'
   get '/notes/:id' => 'notes#show'
   delete '/notes/:id' => 'notes#destroy'
   post '/notes' => 'notes#create'
+  resources :notes
 end
