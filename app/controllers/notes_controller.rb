@@ -1,6 +1,5 @@
 class NotesController < OpenReadController
   before_action :set_note, only: [:show, :update, :destroy]
-
   # GET /notes
   def index
     @notes = Note.all
