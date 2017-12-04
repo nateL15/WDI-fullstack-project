@@ -4,7 +4,6 @@
 # See ProtectedController and OpenReadController
 class ApplicationController < ActionController::API
   # Force to wants JSON for API
-  skip_before_filter :verify_authenticity_token, :only => [:update]
   before_action :api_request_settings
   def api_request_settings
     request.format = :json
